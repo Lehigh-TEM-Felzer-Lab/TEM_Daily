@@ -1,0 +1,14 @@
+CXX = /zhome/Apps/pgi/linux86-64/15.1/bin/pgCC
+CFLAGS = -O2 -Mscalarsse -mcmodel=medium
+
+ELMNTOBJ = ttemdailyread.o \
+	tmaxcohortdat45.o
+
+tem_daily :  ${ELMNTOBJ} tem_daily.cpp
+	${CXX} ${CFLAGS} -o tem_daily ${ELMNTOBJ} tem_daily.cpp
+
+ttemdailyread.o : ttemdailyread.cpp ttemdailyread.h
+	${CXX} ${CFLAGS} -c ttemdailyread.cpp
+
+tmaxcohortdat45.o : tmaxcohortdat45.cpp tmaxcohortdat45.h
+	${CXX} ${CFLAGS} -c tmaxcohortdat45.cpp

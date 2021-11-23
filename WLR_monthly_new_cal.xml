@@ -1,0 +1,345 @@
+<gofile> 
+  <!-- version 4.5.3 developed by T. Cronin 2.23-3.2.2008 -->
+
+    <!-- xequil (int): run xtem in transient (0) or equilibrium (1) mode -->
+  <xequil>0</xequil>
+
+    <!-- clmstartyear (int): starting year for transient climate in input files; note that the first year of the climate files is usually a year earlier, and represents a long-term average value -->
+  <clmstartyr>2000</clmstartyr>
+  
+    <!-- spinflag (int): flag describing method of initialization for each grim.cell: equilibrate to long-term average climate (0); equilibration as in (0) followed by a set number of 'spins' (1); dynamic equilibration (2) -->
+  <spinflag>2</spinflag>
+
+    <!-- numspin (int): number of 'spins' to use in initialization if spinflag is 1 -->
+  <numspin>3</numspin>
+
+    <!-- spintime (int): time in years of each spin -->
+  <spintime>5</spintime>
+
+    <!-- de_startyear (int): starting climate year for dynamic equilibration -->
+  <de_startyear>2000</de_startyear>
+
+    <!-- de_nyears (int): number of years of climate input used in dynamic equilibration -->
+  <de_nyears>5</de_nyears>
+
+    <!-- transtime (int): number of years in the transient climate datasets -->
+  <transtime>11</transtime>
+
+    <!-- mxnumgrid (long): in xtem, number of grim.cells that will be run -->
+  <mxnumgrid>1</mxnumgrid>
+    
+    <!-- lonlatflag (int): in xtem, identify gridcells by row/col (1) or lon/lat (0) -->
+  <lonlatflag>1</lonlatflag>
+
+    <!-- lonlatfile (string): if lonlatflag is 0, what file to use for converting row/col to lon/lat -->
+  <lonlatfile>missing</lonlatfile>
+
+    <!-- grdcnt (long): number of gridcells to output a timestamp for in the logfile -->
+  <grdcnt>1</grdcnt>
+
+    <!-- strtflag (int): start at the beginning of the GIS files (1), or partway through (0). 0 isn't really an option right now --> 
+  <strtflag>1</strtflag>
+
+    <!-- numskip (long): number of grim.cells to skip if strtflag is 0. not really an option right now -->
+  <numskip>0</numskip>
+
+    <!-- endflag (int): finish at the end of the GIS files (1) or partway through (0) -->
+  <endflag>1</endflag>
+
+    <!-- numgrids (long): if skipping grim.cells, how many to run TEM for? -->
+  <numgrids>1</numgrids>
+
+    <!-- sradflag (int): run solar radiation model in TEM (1) or do not run it (0) -->
+  <sradflag>1</sradflag>
+
+    <!-- cldflag (int): radiation input files are for surface radiation (0) or cloudiness (1) -->
+  <cldflag>0</cldflag>
+
+    <!-- parflag (int): if cldflag is 0, is there a dataset for photosynthetically active radiation? (0 - no, 1 - yes) -->
+  <parflag>0</parflag>
+
+    <!-- xtcldsflag (int): radiation input files are transient (1) or based on long-term averages (0) -->
+  <xtcldsflag>1</xtcldsflag>
+
+    <!-- icldsfname (string): input filename for cloudiness data -->
+  <icldsfname>missing</icldsfname>
+    
+    <!-- icldsend (string): input file extension for cloudiness data - only used if xtcldsflag is 1 -->
+  <icldsend>.missing</icldsend>
+
+    <!-- inirrfname (string): input filename for nirr data -->
+  <inirrfname>/share/partition7/jiz412/daily/nirr_NOAA_reanalysis_daily_2000_2010</inirrfname>
+
+    <!-- inirrend (string): input file extension for nirr data - only used if xtcldsflag is 1 -->
+  <inirrend>.wlr</inirrend>
+
+    <!-- igirrfname (string): input filename for girr data -->
+  <igirrfname>missing</igirrfname>
+
+    <!-- igirrend (string): input file extension for girr data - only used if xtcldsflag is 1 -->
+  <igirrend>missing</igirrend>
+
+    <!-- iparfname (string): input filename for par data -->
+  <iparfname>missing</iparfname>
+
+    <!-- iparend (string): input file extension for par data - only used if xtcldsflag is 1 -->
+  <iparend>missing</iparend>
+
+    <!-- xttairflag (int): tair input files are transient (1) or based on long-term averages (0) -->
+  <xttairflag>1</xttairflag>
+
+    <!-- itairfname (string): input filename for tair data -->
+  <itairfname>/share/partition7/jiz412/daily/tair_BCCA_daily_EC01_04</itairfname>
+
+    <!-- itairend (string): input file extension for tair data - only used if xttairflag is 1 -->
+  <itairend>.wlr</itairend>
+
+    <!-- xtprecflag (int): prec input files are transient (1) or based on long-term averages (0) -->  
+  <xtprecflag>1</xtprecflag>
+
+    <!-- iprecfname (string): input filename for prec data -->
+  <iprecfname>/share/partition7/jiz412/daily/prcp_BCCA_daily_EC01_04</iprecfname>
+
+    <!-- iprecend (string): input file extension for prec data - only used if xtprecflag is 1 -->
+  <iprecend>.wlr</iprecend>
+
+    <!-- xttrangeflag (int): trange input files are transient (1) or based on long-term averages (0) -->
+  <xttrangeflag>1</xttrangeflag>
+
+    <!-- itrangefname (string): input filename for trange data -->
+  <itrangefname>/share/partition7/jiz412/daily/dtr_BCCA_daily_2000_2010</itrangefname>
+
+    <!-- itrangeend (string): input file extension for trange data - only used if xttrangeflag is 1 -->
+  <itrangeend>.wlr</itrangeend>
+  
+    <!-- xtvprflag (int): vpr input files are transient (1) or based on long-term averages (0) -->
+  <xtvprflag>1</xtvprflag>
+    
+    <!-- ivprfname (string): input filename for vpr data -->
+  <ivprfname>/share/partition7/jiz412/daily/vpr_NOAA_daily_EC01_042</ivprfname>
+
+    <!-- ivprend (string): input file extension for vpr data - only used if xtvprflag is 1 -->
+  <ivprend>.wlr</ivprend>
+
+    <!-- initco2 (double): concentration of CO2 during initilalization in ppmv -->
+  <initco2>369.56</initco2>
+
+    <!-- xco2level (double): final equilibrium concentration of CO2 - should be same as initco2 -->
+  <xco2level>369.56</xco2level>
+
+    <!-- xtco2flag (int): co2 input file has transient (1) or static (0) data -->
+  <xtco2flag>1</xtco2flag>
+
+    <!-- ico2fname (string): input filename for co2 data -->
+  <ico2fname>/share/partition7/jiz412/daily/CO2_BCCA_2000-2010</ico2fname>
+
+    <!-- ico2end (string): input file extension for co2 data - not used -->
+  <ico2end>.wlr</ico2end>
+
+    <!-- xto3flag (int): ozone input file has transient (1) or long-term average (0) data -->
+  <xto3flag>1</xto3flag>
+
+    <!-- io3fname (string): input filename for o3 data -->
+  <io3fname>/share/partition7/jiz412/daily/O3_2000-2010</io3fname>
+  
+    <!-- io3end (string): input file extension for o3 data - only used if xto3flag is 1 -->
+  <io3end>.wlr</io3end>
+
+    <!-- xtndepflag (int): ndep input file has transient (1) or long-term average (0) data -->
+  <xtndepflag>1</xtndepflag>
+
+    <!-- ndepfname (string): input filename for nitrogen deposition data -->
+  <ndepfname>/share/partition7/jiz412/daily/ndep_2000_2010_prism_cor</ndepfname>
+
+    <!-- ndepend (string): input filename for nitrogen deposition data -->
+  <ndepend>.wlr</ndepend>
+
+    <!-- xtws10flag (int): wind input file has transient (1) or long-term average (0) data -->
+  <xtws10flag>1</xtws10flag>
+
+    <!-- iws10fname (string): input filename for wind data -->
+  <iws10fname>/share/partition7/jiz412/daily/wind_BCCA_daily_2000_2010</iws10fname>
+
+    <!-- iws10end (string): input file extension for ws10 data - only used if xtws10flag is 1 -->
+  <iws10end>.wlr</iws10end>
+
+    <!-- clmoutflag (int): write climate data to files (1) or do not (0) -->
+  <clmoutflag>1</clmoutflag>
+
+    <!-- nclmout (int): number of climate outputs if clmoutflag is 1 -->
+  <nclmout>8</nclmout>
+
+    <!-- clmoutvars (string): comma-delimited list of nclmout climate variables - must be capitalized and match the name of a possible output variable -->
+  <clmoutvars>TAIR,PREC,CLDINESS,PAR,VPR,TRANGE,GIRR,TAIRD</clmoutvars>
+
+    <!-- clmoutfiles (string): comma-delimited list of nclmout output files to contain variables specificied by clmoutvars -->
+  <clmoutfiles>TAIR_mon_wfrac.wlr,PREC_mon_wfrac.wlr,CLDS_mon_wfrac.wlr,PAR_mon_wfrac.wlr,VPR_mon_wfrac.wlr,DTR_mon_wfrac.wlr,GIRR_mon_wfrac.wlr,TAIRD_mon_wfrac.wlr</clmoutfiles>  
+
+    <!-- cmntecd (string): file describing vegetation mosaics as assemblages of pfts -->
+  <cmntecd>/share/partition7/tem/temhydro_combo/tcomm45_lulc.ecd</cmntecd>
+ 
+    <!-- tlclucflag (int): specifies transient (1) or static (0) land use and land cover datasets -->
+  <tlulcflag>0</tlulcflag>
+
+    <!-- imxcohrtfname (string): filename for maximum cohorts input -->
+  <imxcohrtfname>/share/partition7/jiz412/daily/crupotmxlulccohrts.cmipus_rev</imxcohrtfname>
+
+    <!-- imxcohrtend (string): file extension for maximum cohorts input -->
+  <imxcohrtend>.wlr</imxcohrtend>
+
+    <!-- ilulcfname (string): filename for cohorts input -->
+  <ilulcfname>/share/partition7/jiz412/daily/crupotlulccohrts.cmipus_rev</ilulcfname>
+
+    <!-- ilulcend (string): file extension for cohorts input --> 
+  <ilulcend>.wlr</ilulcend>
+
+    <!-- lulclastyr (int): last year transient land use data are available --> 
+  <lulclastyr>-111</lulclastyr>
+
+    <!-- avlnflag (int): run model allowing available n to vary (1) or not (0) -->
+  <avlnflag>1</avlnflag>
+
+    <!-- nfeed (int): run model with nitrogen limitation on gpp (1) or without (0) -->
+  <nfeed>1</nfeed>
+
+    <!-- baseline (int): solve for baseline soil nitrogen during initialization (1) or do not (0) --> 
+  <baseline>0</baseline>
+
+    <!-- moistlim (int): run model with moisture limitation on gpp (1) or without (0) -->
+  <moistlim>1</moistlim>
+
+    <!-- o3flag (int): run model with ozone damage to gpp (1) or without (0) -->
+  <o3flag>1</o3flag>
+
+    <!-- ctequil (int): stop ctem when it has been successfully initialized (1) or do not automatically stop ctem (0) -->
+  <ctequil>0</ctequil>
+  
+    <!-- strteq (int): how many years to wait before checking for equilibrium; should be set to at least tauavg years -->
+  <strteq>500</strteq>
+
+    <!-- rheqflag (int): indicates whether decomposition must equilibrate (1) or may not (0) before model is considered initialized -->
+  <rheqflag>1</rheqflag>
+
+    <!-- wtol (double): absolute tolerance of the water cycle, in mm per year -->
+  <wtol>1.0</wtol>
+    
+    <!-- ctol (double): absolute tolerance of the carbon cycle, in gC per square meter per year --> 
+  <ctol>100.0</ctol>
+
+    <!-- ntol (double): absolute tolerance of the nitrogen cycle, in gN per square meter per year -->
+  <ntol>20.0</ntol>
+
+    <!-- adapttol (int): in ctem, automatically adjust the tolerance of the integrator (1) or do not (0) --> 
+  <adapttol>0</adapttol>
+
+    <!-- maxyears (int): maximum number of years to run when attempting to initialize model; should be several times greater than tauavg -->
+  <maxyears>10000</maxyears>
+
+    <!-- maxnrun (int): maximum number of times to attempt to initialize model -->
+  <maxnrun>1</maxnrun>
+
+    <!-- tauavg (double): averaging time for 'yearly' fluxes during initialization -->  
+  <tauavg>500.0</tauavg>
+
+    <!-- co2level (double): in ctem, concentration of co2, ppmv -->
+  <co2level>369.52</co2level>
+
+    <!-- dc2n (double): factor for relative change of c:n for a change in co2 -->
+  <dc2n>0.0</dc2n>
+    
+    <!-- startyr (int): first year that data will be collected for output -->
+  <startyr>2001</startyr>
+
+    <!-- endyr (int): last year that data will be collected for output -->
+  <endyr>2010</endyr>
+
+    <!-- diffyr (int): data for output will be collected every diffyr years (1 means every year, 2 every other year, etc.) -->
+  <diffyr>1</diffyr>
+
+    <!-- inittol (double): proportional tolerance of the integrator; 0.01 is normal value and means fluxes of n and n+1 order integrators are allowed to differ by 1 percent -->
+  <inittol>0.01</inittol>
+
+    <!-- maxit (int): maximum number of iterations of the adaptive integrator in a month; 20 is normal value -->
+  <maxit>20</maxit>
+ 
+    <!-- maxitmon (int): maximum number of times that the integrator can reach maxit iterations in a month; 100 is normal value --> 
+  <maxitmon>200</maxitmon>
+
+    <!-- rootzecd (string): filename for rooting-depth parameters -->
+  <rootzecd>/share/partition7/jiz412/daily/calibration/ecds/trotz45_lulc.ecd</rootzecd>
+
+    <!-- vegecd (string): filename for vegetation parameters -->
+  <vegecd>/share/partition7/jiz412/daily/calibration/ecds/tveg45_lulc1_wlr.ecd</vegecd>
+
+    <!-- conductecd (string): filename for stomatal conductance and hydraulic parameters -->
+  <conductecd>/share/partition7/jiz412/daily/calibration/ecds/tconduct45_lulc.ecd</conductecd>
+
+    <!-- mcrbecd (string): filename for microbial parameters -->
+  <mcrbecd>/share/partition7/tem/temhydro_combo/cleandat/tmcrv45_lulc.ecd</mcrbecd>
+
+    <!-- agecd (string): filename for agricultural parameters -->
+  <agecd>/share/partition7/tem/temhydro_combo/cleandat/ag45_lulc.ecd</agecd>
+
+    <!-- agtillflag (int): specifies whether tillage is (1) or is not (0) used in agriculture -->
+  <agtillflag>0</agtillflag>
+
+    <!-- agirrgflag (int): specifies whether irrigation is (1) or is not (0) used in agriculture -->
+  <agirrgflag>0</agirrgflag>
+
+    <!-- agfertflag (int): specifies whether fertilization is (1) or is not (0) used in agriculture -->
+  <agfertflag>0</agfertflag>
+
+    <!-- datfilenames (string): comma-delimited list of filenames with parameters that are calibrated for each pft; need to have MAXCMNT-1 files, but not all of them need to be actually calibrated if the pft isn't present in the run -->
+  <datfilenames>/share/partition7/jiz412/daily/calibration/datfiles/pas_daily_ag0_lowsolc.dat</datfilenames>
+
+</datfilenames>
+
+    <!-- fstexture (string): filename with soil texture input -->
+  <fstexture>/share/partition7/jiz412/daily/soil.cmipus.wlr</fstexture>
+
+    <!-- felev (string): filename with elevation input -->
+  <felev>/share/partition7/jiz412/daily/elev.cmipus.wlr</felev>
+
+    <!-- temoutflag (int): specifies whether files with TEM output will (1) or will not (0) be written -->
+  <temoutflag>1</temoutflag>
+
+    <!-- intervalflag (int): specifies whether files with TEM output will be monthly (1) or daily (0)  -->
+  <intervalflag>1</intervalflag>
+
+    <!-- ntemout (int): number of TEM output variables if temoutflag is 1 -->
+  <ntemout>28</ntemout>
+
+    <!-- temoutvars (string): comma-delimited list of ntemout TEM variables - must be capitalized and match the name of a possible output variable -->
+  <temoutvars>RUNOFFS,VSM,PECAN,PESOIL,VEGC,SOILORGC,NPP,NEP,GPP,VEGINGPP,LAI,RH,RVMAINT,EET,AVAILH2O,SAPWOODC,HEARTWOODC,ROOTC,SEEDC,LABILEC,ALLOCLC,ALLOCRC,ALLOCSC,FRDL,TEMP,FCO2,FH2O,FO3</temoutvars>
+
+    <!-- temoutfiles (string): comma-delimited list of ntemout output files to contain variables specificied by temoutvars -->
+  <temoutfiles>RUNOFFS_mon_wfrac.WLR,VSM_mon_wfrac.WLR,PECAN_mon_wfrac.WLR,PESOIL_mon_wfrac.WLR,VEGC_mon_wfrac.WLR,SOLC_mon_wfrac.WLR,NPP_mon_wfrac.WLR,NEP_mon_wfrac.WLR,GPP_mon_wfrac.WLR,VEGINGPP_mon_wfrac.WLR,LAI_mon_wfrac.WLR,RH_mon_wfrac.WLR,RVMAINT_mon_wfrac.WLR,EET_mon_wfrac.WLR,AVLW_mon_wfrac.WLR,SAPWOODC_mon_wfrac.WLR,HEARTWOODC_mon_wfrac.WLR,ROOTC_mon_wfrac.WLR,SEEDC_mon_wfrac.WLR,LABILEC_mon_wfrac.WLR,ALLOCLC_mon_wfrac.WLR,ALLOCRC_mon_wfrac.WLR,ALLOCSC_mon_wfrac.WLR,FRDL_mon_wfrac.WLR,TEMP_mon_wfrac.WLR,FCO2_m.WLR,FH2O_mon_wfrac.WLR,FO3_mon_wfrac.WLR</temoutfiles>  
+
+    <!-- spinoutflag (int): output for all years (1), output for some years (2), or do not output (0) tem variables during spinup -->  
+  <spinoutflag>0</spinoutflag>
+
+    <!-- spinoutyrs (int): if spinoutflag is 2, the starting year of spinup output -->
+  <spinoutyrs>0</spinoutyrs>
+
+    <!-- istateflag (int): specifies input state; use initialization (0); use a TEMSTATE file at equilibrium (1) or from a specific year (2) -->
+  <istateflag>2</istateflag>
+
+    <!-- istatefile (string): TEMSTATE filename for input if istateflag is 1 or 2 -->
+  <istatefile>/share/partition7/jiz412/temhydro_disturb/parallel/TEM_RESTART_US_2000_POT29387</istatefile>
+  
+    <!-- istateyear (int): year of TEMSTATE file if istateflag is 2 -->
+  <istateyear>2000</istateyear>
+
+    <!-- ostateflag (int): specifies whether to write TEM state to an output file; no (0); yes, at equilibrium (1); yes, for a specific year (2) -->
+  <ostateflag>0</ostateflag>
+
+    <!-- ostatefile (string): TEMSTATE filename for output is ostateflag is 1 or 2 -->
+  <ostatefile>missing</ostatefile>
+
+    <!-- ostateyear (int): year of TEMSTATE file if ostateflag is 2 -->
+  <ostateyear>0</ostateyear>
+
+    <!-- calibcmnt (int): if using ctem, the pft number to calibrate -->
+  <calibcmnt>6</calibcmnt>
+
+</gofile>

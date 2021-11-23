@@ -1,0 +1,89 @@
+CXX = /zhome/Apps/pgi/linux86-64/15.1/bin/pgCC
+CFLAGS = -O2 -Mscalarsse -mcmodel=medium
+
+CLMOBJ = tclmd.o  
+
+LULCOBJ = tbiomed.o tlclucd.o
+
+TEMOBJ = ttemd_cwd.o atmsd.o penmond.o tvegd.o tmcrbd.o \
+tsoild.o humnactd_cwd.o
+
+ELMNTOBJ = elmnt45.o telmd_cwd.o latdat45.o \
+tclmdatd.o tco2datd.o \
+lulcdat45a.o tmaxcohortdat45.o \
+ttemdatd.o telvdat45.o tsoldat45.o \
+atmdepdat.o tatmdep.o
+
+OBJ =  tprocessXMLd.o
+
+xtemd_cwd : ${CLMOBJ} ${LULCOBJ} ${TEMOBJ} ${ELMNTOBJ} ${OBJ} xtemd_cwd.cpp 
+	${CXX} ${CFLAGS} -o xtemd_cwd ${CLMOBJ} ${LULCOBJ} ${TEMOBJ} ${ELMNTOBJ} ${OBJ} xtemd_cwd.cpp
+	
+atmsd.o : atmsd.cpp atmsd.h
+	${CXX} ${CFLAGS} -c atmsd.cpp
+
+elmnt45.o : elmnt45.cpp elmnt45.h
+	${CXX} ${CFLAGS} -c elmnt45.cpp
+
+humnactd_cwd.o : humnactd_cwd.cpp humnactd_cwd.h
+	${CXX} ${CFLAGS} -c humnactd_cwd.cpp
+
+latdat45.o : latdat45.cpp latdat45.h
+	${CXX} ${CFLAGS} -c latdat45.cpp
+
+lulcdat45a.o : lulcdat45a.cpp lulcdat45a.h
+	${CXX} ${CFLAGS} -c lulcdat45a.cpp
+
+tbiomed.o : tbiomed.cpp tbiomed.h
+	${CXX} ${CFLAGS} -c tbiomed.cpp
+
+tclmd.o : tclmd.cpp tclmd.h
+	${CXX} ${CFLAGS} -c tclmd.cpp
+
+tclmdatd.o : tclmdatd.cpp tclmdatd.h
+	${CXX} ${CFLAGS} -c tclmdatd.cpp
+
+tco2datd.o : tco2datd.cpp tco2datd.h
+	${CXX} ${CFLAGS} -c tco2datd.cpp
+
+telvdat45.o : telvdat45.cpp telvdat45.h
+	${CXX} ${CFLAGS} -c telvdat45.cpp
+
+telmd_cwd.o : telmd_cwd.cpp telmd_cwd.h
+	${CXX} ${CFLAGS} -c telmd_cwd.cpp
+
+tlclucd.o : tlclucd.cpp tlclucd.h
+	${CXX} ${CFLAGS} -c tlclucd.cpp
+
+tmaxcohortdat45.o : tmaxcohortdat45.cpp tmaxcohortdat45.h
+	${CXX} ${CFLAGS} -c tmaxcohortdat45.cpp
+
+tmcrbd.o : tmcrbd.cpp tmcrbd.h
+	${CXX} ${CFLAGS} -c tmcrbd.cpp
+
+tprocessXMLd.o : tprocessXMLd.cpp tprocessXMLd.h
+	${CXX} ${CFLAGS} -c tprocessXMLd.cpp
+
+tsoild.o : tsoild.cpp tsoild.h
+	${CXX} ${CFLAGS} -c tsoild.cpp
+
+tsoldat45.o : tsoldat45.cpp tsoldat45.h
+	${CXX} ${CFLAGS} -c tsoldat45.cpp
+
+ttemd_cwd.o : ttemd_cwd.cpp ttemd_cwd.h
+	${CXX} ${CFLAGS} -c ttemd_cwd.cpp
+
+ttemdatd.o : ttemdatd.cpp ttemdatd.h
+	${CXX} ${CFLAGS} -c ttemdatd.cpp
+
+tvegd.o : tvegd.cpp tvegd.h
+	${CXX} ${CFLAGS} -c tvegd.cpp
+	
+penmond.o : penmond.cpp penmond.h
+	${CXX} ${CFLAGS} -c penmond.cpp
+
+atmdepdat.o : atmdepdat.cpp atmdepdat.h
+	${CXX} ${CFLAGS} -c atmdepdat.cpp
+
+tatmdep.o : tatmdep.cpp tatmdep.h
+	${CXX} ${CFLAGS} -c tatmdep.cpp

@@ -1,0 +1,59 @@
+CXX = /zhome/Apps/pgi/linux86-64/15.1/bin/pgCC
+CFLAGS = -O2 -Mscalarsse -mcmodel=medium
+
+CLMOBJ = tclmd.o
+
+TEMOBJ = ttemd_cwd.o atmsd.o penmond.o tvegd.o tmcrbd.o \
+tsoild.o humnactd_cwd.o
+
+ELMNTOBJ = tclmdatd.o telvdat45.o tco2datd.o tsoldat45.o atmdepdat.o tatmdep.o
+
+OBJ =  tprocessXMLd.o
+
+ctemd : ${CLMOBJ} ${TEMOBJ} ${ELMNTOBJ} ${OBJ} ctemd.cpp
+	${CXX} ${CFLAGS} -o ctemd ${CLMOBJ} ${TEMOBJ} ${ELMNTOBJ} ${OBJ} ctemd.cpp -lcurses
+
+atmsd.o : atmsd.cpp atmsd.h
+	${CXX} ${CFLAGS} -c atmsd.cpp
+
+humnactd_cwd.o : humnactd_cwd.cpp humnactd_cwd.h
+	${CXX} ${CFLAGS} -c humnactd_cwd.cpp
+
+penmond.o : penmond.cpp penmond.h
+	${CXX} ${CFLAGS} -c penmond.cpp
+
+tclmd.o : tclmd.cpp tclmd.h
+	${CXX} ${CFLAGS} -c tclmd.cpp
+
+tclmdatd.o : tclmdatd.cpp tclmdatd.h
+	${CXX} ${CFLAGS} -c tclmdatd.cpp
+
+tco2datd.o : tco2datd.cpp tco2datd.h
+	${CXX} ${CFLAGS} -c tco2datd.cpp
+
+telvdat45.o : telvdat45.cpp telvdat45.h
+	${CXX} ${CFLAGS} -c telvdat45.cpp
+
+tmcrbd.o : tmcrbd.cpp tmcrbd.h
+	${CXX} ${CFLAGS} -c tmcrbd.cpp
+
+tprocessXMLd.o : tprocessXMLd.cpp tprocessXMLd.h
+	${CXX} ${CFLAGS} -c tprocessXMLd.cpp
+
+tsoild.o : tsoild.cpp tsoild.h
+	${CXX} ${CFLAGS} -c tsoild.cpp
+
+tsoldat45.o : tsoldat45.cpp tsoldat45.h
+	${CXX} ${CFLAGS} -c tsoldat45.cpp
+
+ttemd_cwd.o : ttemd_cwd.cpp ttemd_cwd.h
+	${CXX} ${CFLAGS} -c ttemd_cwd.cpp
+
+tvegd.o : tvegd.cpp tvegd.h
+	${CXX} ${CFLAGS} -c tvegd.cpp
+
+atmdepdat.o : atmdepdat.cpp atmdepdat.h
+	${CXX} ${CFLAGS} -c atmdepdat.cpp
+
+tatmdep.o : tatmdep.cpp tatmdep.h
+	${CXX} ${CFLAGS} -c tatmdep.cpp
